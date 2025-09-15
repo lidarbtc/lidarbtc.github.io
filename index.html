@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hyunjae Chung</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --primary-color: #2c3e50;
+                --secondary-color: #3498db;
+                --text-color: #333;
+                --light-gray: #f8f9fa;
+                --border-color: #e9ecef;
+                --max-width: 900px;
+            }
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    "Helvetica Neue", Arial, sans-serif;
+                line-height: 1.4;
+                color: var(--text-color);
+                background: #fff;
+                font-size: 10pt;
+            }
+
+            .container {
+                max-width: var(--max-width);
+                margin: 0 auto;
+                padding: 10px 20px;
+            }
+
+            header {
+                text-align: center;
+                padding: 15px 0 10px;
+                border-bottom: 1px solid var(--border-color);
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: var(--primary-color);
+                margin-bottom: 3px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                color: #666;
+                margin-bottom: 8px;
+            }
+
+            .contact {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+                margin-top: 8px;
+                font-size: 0.9rem;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: var(--secondary-color);
+                text-decoration: none;
+            }
+
+            .contact-item:hover {
+                opacity: 0.7;
+            }
+
+            section {
+                margin-bottom: 18px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                color: var(--primary-color);
+                margin-bottom: 8px;
+                padding-bottom: 3px;
+                border-bottom: 1px solid var(--secondary-color);
+                display: inline-block;
+            }
+
+            .experience-item,
+            .education-item,
+            .project-item,
+            .award-item {
+                margin-bottom: 10px;
+                padding-left: 10px;
+                position: relative;
+            }
+
+            .experience-item::before,
+            .education-item::before,
+            .project-item::before,
+            .award-item::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 6px;
+                width: 4px;
+                height: 4px;
+                background: var(--secondary-color);
+                border-radius: 50%;
+            }
+
+            .experience-header,
+            .education-header,
+            .project-header,
+            .award-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 2px;
+                flex-wrap: wrap;
+            }
+
+            h3 {
+                font-size: 0.95rem;
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+
+            .date {
+                color: #666;
+                font-size: 0.85rem;
+            }
+
+            .company,
+            .school {
+                color: var(--secondary-color);
+                font-weight: 500;
+                margin-bottom: 2px;
+                font-size: 0.9rem;
+            }
+
+            .description {
+                color: #555;
+                line-height: 1.4;
+                font-size: 0.9rem;
+            }
+
+            .skills-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 5px;
+            }
+
+            .skill-item {
+                background: var(--light-gray);
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-size: 0.85rem;
+            }
+
+            .project-tech {
+                display: flex;
+                gap: 6px;
+                margin-top: 3px;
+                flex-wrap: wrap;
+            }
+
+            .tech-tag {
+                background: var(--secondary-color);
+                color: white;
+                padding: 1px 6px;
+                border-radius: 10px;
+                font-size: 0.75rem;
+            }
+
+            .two-column {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .summary-text {
+                font-size: 0.9rem;
+                color: #555;
+                line-height: 1.4;
+            }
+
+            .github-link {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 0.85rem;
+                color: #666;
+            }
+
+            .github-link a {
+                color: var(--secondary-color);
+                text-decoration: none;
+            }
+
+            @media print {
+                body {
+                    font-size: 9pt;
+                }
+
+                .container {
+                    max-width: 100%;
+                    padding: 0;
+                }
+
+                header {
+                    padding: 10px 0 8px;
+                    margin-bottom: 10px;
+                }
+
+                section {
+                    margin-bottom: 12px;
+                    page-break-inside: avoid;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                h2 {
+                    font-size: 1rem;
+                    margin-bottom: 6px;
+                }
+
+                .experience-item,
+                .education-item,
+                .project-item,
+                .award-item {
+                    margin-bottom: 8px;
+                }
+
+                .contact {
+                    font-size: 0.8rem;
+                }
+
+                .description {
+                    font-size: 0.85rem;
+                }
+
+                .skill-item {
+                    font-size: 0.8rem;
+                    padding: 2px 6px;
+                }
+
+                .tech-tag {
+                    font-size: 0.7rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Hyunjae Chung (lidar)</h1>
+                <p class="subtitle">Director @PDAO</p>
+                <div class="contact">
+                    <a
+                        href="mailto:lidarbtc@protonmail.com"
+                        class="contact-item"
+                    >
+                        <span>✉</span>
+                        <span>lidarbtc@protonmail.com</span>
+                    </a>
+                    <a href="https://lidar.blog" class="contact-item">
+                        <span>🔗</span>
+                        <span>lidar.blog</span>
+                    </a>
+                    <a href="https://github.com/lidarbtc" class="contact-item">
+                        <span>💻</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/hyunjae-chung"
+                        class="contact-item"
+                    >
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <span class="contact-item">
+                        <span>📍</span>
+                        <span>South Korea</span>
+                    </span>
+                </div>
+            </header>
+
+            <section>
+                <h2>Summary</h2>
+                <p class="summary-text">
+                    Passionate blockchain developer and Rust enthusiast with
+                    expertise in decentralized systems and Web3 technologies.
+                    Active contributor to open-source communities.
+                </p>
+            </section>
+
+            <div class="two-column">
+                <div>
+                    <section>
+                        <h2>Experience</h2>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Director</h3>
+                                <span class="date">Jul 2025 - Present</span>
+                            </div>
+                            <p class="company">PDAO (POSTECH DAO)</p>
+                            <p class="description">
+                                • Operations management and development
+                            </p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Active Member</h3>
+                                <span class="date">Jun 2024 - Jul 2025</span>
+                            </div>
+                            <p class="company">PDAO (POSTECH DAO)</p>
+                            <p class="description">
+                                • Blockchain research and development
+                            </p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Translation Reviewer</h3>
+                                <span class="date">Aug - Sep 2025</span>
+                            </div>
+                            <p class="company">The Tor Project</p>
+                            <p class="description">
+                                • English-Korean translation review
+                            </p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Translation Reviewer</h3>
+                                <span class="date">Mar - Apr 2025</span>
+                            </div>
+                            <p class="company">Radio Free Asia</p>
+                            <p class="description">
+                                • English-Korean translation review
+                            </p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Co-Founder</h3>
+                                <span class="date">Oct 2024 - Mar 2025</span>
+                            </div>
+                            <p class="company">IQ6900 ($IQ)</p>
+                            <p class="description">
+                                • Solana inscription project ($52M market cap)
+                            </p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h3>Translator</h3>
+                                <span class="date">Mar - May 2024</span>
+                            </div>
+                            <p class="company">The Tor Project</p>
+                            <p class="description">
+                                • English-Korean translation
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Education</h2>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h3>Bachelor of Computer Science</h3>
+                                <span class="date">Mar 2025 - Present</span>
+                            </div>
+                            <p class="school">
+                                Dongguk University DUICA (학점은행제)
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Awards</h2>
+                        <div class="award-item">
+                            <div class="award-header">
+                                <h3>4th Prize - Monad Hackathon 1st</h3>
+                                <span class="date">Jul 2025</span>
+                            </div>
+                            <p class="description">
+                                MintMe - Digital NFT business card app
+                            </p>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-header">
+                                <h3>3rd Prize - Monad Hackathon 2nd</h3>
+                                <span class="date">Aug 2025</span>
+                            </div>
+                            <p class="description">
+                                Monaddit - Staking-based community platform
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <section>
+                        <h2>Projects</h2>
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>MoreTrace (private, in progress)</h3>
+                                <span class="date">2025</span>
+                            </div>
+                            <p class="description">
+                                MODHAUS artist objekt (NFT) viewer
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Actix</span>
+                                <span class="tech-tag">SolidJS</span>
+                                <span class="tech-tag">rindexer</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>Multirdp</h3>
+                                <span class="date">2024</span>
+                            </div>
+                            <p class="description">
+                                Multi-platform RDP client for simultaneous
+                                connections.
+                                <a
+                                    href="https://github.com/lidarbtc/multirdp"
+                                    style="
+                                        color: var(--secondary-color);
+                                        text-decoration: none;
+                                    "
+                                    >GitHub</a
+                                >
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Tauri</span>
+                                <span class="tech-tag">IronRDP</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>newjeans.network</h3>
+                                <span class="date">2023</span>
+                            </div>
+                            <p class="description">
+                                Artist photo gallery website.
+                                <a
+                                    href="https://newjeans.network"
+                                    style="
+                                        color: var(--secondary-color);
+                                        text-decoration: none;
+                                    "
+                                    >Live</a
+                                >
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Actix</span>
+                                <span class="tech-tag">Preact</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>photon.one</h3>
+                                <span class="date">2022</span>
+                            </div>
+                            <p class="description">
+                                Secure photo sharing (20K MAU).
+                                <a
+                                    href="https://photon.one"
+                                    style="
+                                        color: var(--secondary-color);
+                                        text-decoration: none;
+                                    "
+                                    >Live</a
+                                >
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Actix</span>
+                                <span class="tech-tag">SolidJS</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Technical Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-item">Rust</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">TypeScript</div>
+                            <div class="skill-item">Solidity</div>
+                            <div class="skill-item">Network Engineering</div>
+                            <div class="skill-item">Blockchain</div>
+                            <div class="skill-item">System Programming</div>
+                            <div class="skill-item">Web Development</div>
+                            <div class="skill-item">Infrastructure</div>
+                            <div class="skill-item">Security</div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Open Source Contributions and Misc</h2>
+                        <p class="description">
+                            • HftBacktest: Hyperliquid data collector
+                            <a
+                                href="https://github.com/nkaz001/hftbacktest/pull/217"
+                                style="
+                                    color: var(--secondary-color);
+                                    text-decoration: none;
+                                "
+                                >#217</a
+                            ><br />
+                            • Nautilus Trader: WebSocket optimization
+                            <a
+                                href="https://github.com/nautechsystems/nautilus_trader/pull/2369"
+                                style="
+                                    color: var(--secondary-color);
+                                    text-decoration: none;
+                                "
+                                >#2369</a
+                            ><br />
+                            • Other: BGP AS208809 operator with full routing
+                            table<br />
+                            • More on
+                            <a
+                                href="https://github.com/lidarbtc"
+                                style="
+                                    color: var(--secondary-color);
+                                    text-decoration: none;
+                                "
+                                >GitHub</a
+                            >
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
