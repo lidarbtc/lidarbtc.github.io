@@ -302,7 +302,7 @@
                     <p class="company">IQ6900 ($IQ)</p>
                     <ul>
                         <li>Co-founded Solana inscription project that reached $52M market capitalization</li>
-                        <li>Resolved critical performance bottleneck in image/GIF processing backend using Rust Actix and image crates, implementing concurrent processing with Rayon to significantly improve response times</li>
+                        <li>Resolved critical performance bottleneck in image/GIF processing backend using Rust Actix and image crates, implementing concurrent processing with Rayon to achieve 4x faster processing speeds</li>
                         <li>Developed smart contracts and backend infrastructure for community-driven inscription platform</li>
                     </ul>
                 </div>
@@ -335,34 +335,27 @@
                         <span class="date">2024</span>
                     </div>
                     <p class="description">
-                        Cross-platform GUI application enabling simultaneous connections to multiple RDP hosts with synchronized control.
-                        Supports Windows, macOS, and Linux with efficient resource management.
+                        Resolved async Send trait constraints by forking IronRDP library and replacing Rc with Arc wrapped in Box to enable cross-thread/task message passing.
+                        Built cross-platform GUI application for simultaneous RDP connections with synchronized control.
                         <a href="https://github.com/lidarbtc/multirdp">[GitHub]</a>
                     </p>
                 </div>
                 <div class="item">
                     <div class="item-header">
                         <div class="project-title">
-                            <h3>Monad Blitz Seoul Hackathon Winner</h3>
+                            <h3>Monad Hackathon - MintMe (4th Prize)</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Actix</span>
+                                <span class="tech-tag">SQLx</span>
+                                <span class="tech-tag">Hardhat</span>
+                            </div>
                         </div>
-                        <span class="date">Jul - Aug 2025</span>
+                        <span class="date">Jul 2025</span>
                     </div>
                     <p class="description">
-                        <strong>1st Hackathon - MintMe (4th Prize):</strong> Digital NFT business card application for professional networking with smart contracts and backend infrastructure.
-                        <div class="project-tech">
-                            <span class="tech-tag">Rust</span>
-                            <span class="tech-tag">Actix</span>
-                            <span class="tech-tag">Hardhat</span>
-                        </div>
-                        <br>
-                        <strong>2nd Hackathon - Monaddit (3rd Prize):</strong> Staking-based community platform with content accountability through slashing mechanism. Full-stack application including smart contracts, backend, and frontend.
-                        <div class="project-tech">
-                            <span class="tech-tag">Rust</span>
-                            <span class="tech-tag">Axum</span>
-                            <span class="tech-tag">Alloy</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Foundry</span>
-                        </div>
+                        Developed Monad smart contracts for NFT minting, implemented Rust Actix image server with multipart upload handling, and integrated Gemini API for RAG-based summarization.
+                        Resolved SQLite connection failures in systemd service by fixing working directory configuration for relative path resolution.
                     </p>
                 </div>
             </section>
